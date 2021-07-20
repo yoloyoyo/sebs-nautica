@@ -31,6 +31,9 @@ controller.right.onEvent(ControllerButtonEvent.Released, function () {
 controller.left.onEvent(ControllerButtonEvent.Released, function () {
     mySprite.setVelocity(-10, 0)
 })
+statusbars.onZero(StatusBarKind.Health, function (status) {
+    game.over(false)
+})
 sprites.onOverlap(SpriteKind.Player, SpriteKind.fish, function (sprite, otherSprite) {
     statusbar.value += -1
     music.thump.playUntilDone()
